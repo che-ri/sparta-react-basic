@@ -1,14 +1,9 @@
 import React from "react";
-import Styled from "styled-components";
-import HW2 from "./hw/hw2/HW2";
 import "./App.scss";
+import RouterPrac from "./RouterPrac/RouterPrac";
 
 const App = () => {
-    return (
-        <>
-            <HW2 />
-        </>
-    );
+    return <RouterPrac />;
 };
 
 export default App;
