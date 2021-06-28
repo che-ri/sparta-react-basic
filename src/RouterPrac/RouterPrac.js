@@ -114,6 +114,28 @@ const Input = styled.div`
     margin: 20px auto;
     border-radius: 5px;
     border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & * {
+        padding: 5px;
+    }
+    & input {
+        width: 70%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.7);
+        &:focus {
+            border: 1px solid #ff2768;
+        }
+    }
+    & button {
+        width: 25%;
+        color: #fff;
+        background-color: #ff2768;
+        border: 1px solid #ff2768;
+        border-radius: 5px;
+    }
 `;
 
 const Container = styled.div`
@@ -127,7 +149,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-    color: slateblue;
+    color: #4e1a3d;
     text-align: center;
 `;
 

@@ -12,6 +12,7 @@ const Progress = props => {
     return (
         <ProgressBar>
             <HighLight width={range} />
+            <Dot />
         </ProgressBar>
     );
 };
@@ -19,13 +20,27 @@ const Progress = props => {
 const ProgressBar = Styled.div`
 background: #eee;
 width: 100%;
-height: 40px;
+height: 20px;
+display:flex;
+align-items:center;
+border-radius:10px;
 `;
 const HighLight = Styled.div`
-background:orange;
+background:#FF2768;
 height: 100%;
 width: ${props => props.width};
 transition: width 1s ease-in-out;
+border-radius:10px;
+`;
+
+const Dot = Styled.div`
+margin-left:-15px;
+background: #fff;
+border:5px solid #FF2768;
+box-sizing:border-box;
+width: 30px;
+height: 30px;
+border-radius:50%;
 `;
 
 export default Progress;
