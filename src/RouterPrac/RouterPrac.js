@@ -55,7 +55,7 @@ class RouterPrac extends React.Component {
             <>
                 <Container>
                     <Title>내 버킷리스트</Title>
-                    <Progress/>
+                    <Progress />
                     <Line />
                     {/* 컴포넌트를 넣어줍니다. */}
                     {/* <컴포넌트 명 [props 명]={넘겨줄 것(리스트, 문자열, 숫자, ...)}/> */}
@@ -89,6 +89,18 @@ class RouterPrac extends React.Component {
                     <input type="text" ref={this.text} />
                     <button onClick={this.addBucketList}>추가하기</button>
                 </Input>
+                <button
+                    onClick={() => {
+                        //scrollTo의 옵션을 사용합니다. behavior옵션의 smooth를 사용하면 매끄럽게 스크롤이 됩니다!
+                        window.scrollTo({
+                            top: 0,
+                            left: 0,
+                            behavior: "smooth",
+                        });
+                    }}
+                >
+                    위로가기
+                </button>
             </>
         );
     }
