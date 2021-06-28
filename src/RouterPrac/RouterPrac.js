@@ -12,7 +12,12 @@ import NotFound from "./NotFound";
 import Progress from "./Progress";
 
 // 리덕스 모듈에서 (bucket 모듈에서) 액션 생성 함수 두개를 가져올게요!
-import { loadBucket, createBucket } from "../redux/modules/bucket";
+import {
+    loadBucket,
+    createBucket,
+    loadBucketFB,
+    addBucketFB,
+} from "../redux/modules/bucket";
 
 // 이 함수는 스토어가 가진 상태값을 props로 받아오기 위한 함수예요.
 const mapStateToProps = state => ({
@@ -22,10 +27,10 @@ const mapStateToProps = state => ({
 // 이 함수는 값을 변화시키기 위한 액션 생성 함수를 props로 받아오기 위한 함수예요.
 const mapDispatchToProps = dispatch => ({
     load: () => {
-        dispatch(loadBucket());
+        dispatch(loadBucketFB());
     },
     create: new_item => {
-        dispatch(createBucket(new_item));
+        dispatch(addBucketFB(new_item));
     },
 });
 
@@ -40,7 +45,8 @@ class RouterPrac extends React.Component {
     }
 
     componentDidMount() {
-        console.log("마운트가 끝났다!");
+        //mapDispatchToProps에 있는 함수지요! 데이터를 불러옵니다!
+        this.props.load();
     }
 
     addBucketList = () => {
@@ -89,7 +95,7 @@ class RouterPrac extends React.Component {
                     <input type="text" ref={this.text} />
                     <button onClick={this.addBucketList}>추가하기</button>
                 </Input>
-                <button
+                {/* <button
                     onClick={() => {
                         //scrollTo의 옵션을 사용합니다. behavior옵션의 smooth를 사용하면 매끄럽게 스크롤이 됩니다!
                         window.scrollTo({
@@ -100,7 +106,7 @@ class RouterPrac extends React.Component {
                     }}
                 >
                     위로가기
-                </button>
+                </button> */}
             </>
         );
     }

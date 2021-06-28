@@ -16,7 +16,7 @@ const BucketList = props => {
                     <ItemStyle
                         className="list_item"
                         key={index}
-                        completed={list.completed}
+                        completed={list.complete}
                         onClick={() => {
                             // 배열의 몇번째 항목을 눌렀는 지, url 파라미터로 넘겨줍니다.
                             props.history.push("/detail/" + index);
@@ -33,9 +33,9 @@ const BucketList = props => {
 const ListStyle = styled.div`
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    /* height: 50vh; */
     overflow-x: hidden;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 `;
 
 const ItemStyle = styled.div`

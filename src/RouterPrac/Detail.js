@@ -4,7 +4,7 @@ import Styled from "styled-components";
 // redux hook을 불러옵니다.
 import { useDispatch, useSelector } from "react-redux";
 // 내가 만든 액션 생성 함수를 불러옵니다.
-import { deleteBucket, completeBucket } from "../redux/modules/bucket";
+import { completeBucketFB, deleteBucketFB } from "../redux/modules/bucket";
 
 const Detail = props => {
     const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const Detail = props => {
                 onClick={() => {
                     //   dispatch(); <- 괄호안에는 액션 생성 함수가 들어가야겠죠?
                     // 예를 들면 이렇게요.
-                    dispatch(deleteBucket(bucket_index));
+                    dispatch(deleteBucketFB(bucket_index));
                     props.history.push("/");
                 }}
             >
@@ -36,7 +36,7 @@ const Detail = props => {
             </Btn>
             <Btn
                 onClick={() => {
-                    dispatch(completeBucket(bucket_index));
+                    dispatch(completeBucketFB(bucket_index));
                     props.history.goBack();
                 }}
             >
