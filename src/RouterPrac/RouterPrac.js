@@ -9,6 +9,7 @@ import { connect } from "react-redux"; //리덕스
 import BucketList from "./BucketList";
 import Detail from "./Detail";
 import NotFound from "./NotFound";
+import Progress from "./Progress";
 
 // 리덕스 모듈에서 (bucket 모듈에서) 액션 생성 함수 두개를 가져올게요!
 import { loadBucket, createBucket } from "../redux/modules/bucket";
@@ -54,6 +55,7 @@ class RouterPrac extends React.Component {
             <>
                 <Container>
                     <Title>내 버킷리스트</Title>
+                    <Progress/>
                     <Line />
                     {/* 컴포넌트를 넣어줍니다. */}
                     {/* <컴포넌트 명 [props 명]={넘겨줄 것(리스트, 문자열, 숫자, ...)}/> */}
